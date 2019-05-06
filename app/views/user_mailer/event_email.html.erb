@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @user.first_name %>, et félicitations !</h1>
+    <p>
+      Tu as crées l'évènement suivant: "<%= @event.title %>", et quelqu'un s'y est inscrit ! Waouh !
+    </p>
+    <p>
+      Pour accéder à ton espace, connecte-toi via : <%= @url %>.
+    </p>
+    <p> À très vite sur theeventproject.fr !
+  </body>
+</html>
