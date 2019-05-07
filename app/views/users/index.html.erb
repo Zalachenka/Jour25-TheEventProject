@@ -1,10 +1,11 @@
-      <h1>First name: <%= @user.first_name %></h1><br>
-      <b>Last name :</b><p><%= @user.last_name%></p>
-      <b>Decription :</b><p><%= @user.description%></p>
-      <b>Email :</b><p><%= @user.email %></p>
+     <h1>First name: <%= @user.first_name %></h1><br>
+     <b>Last name :</b><p><%= @user.last_name%></p>
+     <b>Decription :</b><p><%= @user.description%></p>
+     <b>Email :</b><p><%= @user.email %></p>
      <b>Events you're origanizing :</b>
      <p> <% @user.event.each do |event| %>
 
-      <%= event.description %>"<br>
+      <%= event.title %><br>
+      <%= event.description %><br>
       <% end %>
     </p>

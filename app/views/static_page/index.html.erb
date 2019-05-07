@@ -32,7 +32,7 @@
         <div class="card-body">
           <p>
             Administrator : 
-            <%= event.user.first_name %>
+            <a href="<%= users_index_path%>"><%= event.user.first_name %></a>
             <%= %>
             <br/>
             Event title :
