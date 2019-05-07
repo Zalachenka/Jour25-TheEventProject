@@ -1,4 +1,22 @@
-<h1>Welcome to the Event Project ! The networking website specialized in events</h1>
+<ul>
+  <% if user_signed_in? %>
+
+    <li>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    </li>
+
+    <li>
+      Email signed in : <%= current_user.email %>
+    </li>
+
+    <li>
+      <%= link_to "Secret page", static_page_secret_path %>
+    </li>
+
+    <li>
+      <%= link_to "Edit email / password", edit_user_registration_path %>
+    </li>
+  <h1>Welcome to the Event Project ! The networking website specialized in events</h1>
 
 <h2>Registered events</h2>
 
@@ -14,7 +32,7 @@
         <div class="card-body">
           <p>
             Administrator : 
-            <%= event.user.first_name %>
+            <a href="<%= users_index_path%>"><%= event.user.first_name %></a>
             <%= %>
             <br/>
             Event title :
@@ -31,3 +49,17 @@
 <% end %>
 
 </div>
+  <% else %>
+  <h1>Welcome to the Event Project ! The networking website specialized in events</h1>
+
+<h2>Registered events</h2>
+    <li>    
+      <%= link_to "Sign in", new_user_session_path %>
+    </li>
+
+    <li>
+      <%= link_to "Sign up", new_user_registration_path %>
+    </li>
+
+  <% end %>
+</ul>
