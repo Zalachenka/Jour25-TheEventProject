@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/show'
   get 'event/index'
-	root 'static_page#index'
+	root 'event#index'
   get 'static_page/index'
   get 'static_page/secret'
   devise_for :users
