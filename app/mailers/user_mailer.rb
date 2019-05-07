@@ -13,12 +13,9 @@ class UserMailer < ApplicationMailer
   end
 
   def event_email(user, attendance)
-  	@attendance = attendance
-  	@user = user
-  	@url  = 'http://theeventproject.fr/login' 
-
-  		if attendance.create
-    		mail(to: @user.email, subject: 'Félicitations !') 
-		end
+    @attendance = attendance
+    @user = @attendance.event.user
+    @admin = event.user
+    mail(to: @admin.email, subject: 'Congrats !') 
 	end
 end
