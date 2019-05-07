@@ -6,13 +6,13 @@ Attendance.destroy_all
 puts "Database destoyed"
 
 20.times do
-	user = User.create!(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.unique.last_name, email: Faker::Name.first_name+"@waspose.com",
-		 encrypted_password: Faker::String.random(6..12), description: Faker::Marketing.buzzwords)
+	user = User.create!(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.unique.last_name, email: Faker::Name.first_name+"@yopmail.com", 
+		password: Faker::String.random(6..12), description: Faker::Marketing.buzzwords)
 end
 puts "20 users created"
 
 30.times do
-	event = Event.create!(start_date: Faker::Date.forward(2), duration: rand(1..200)*5, title: Faker::Lorem.characters(60),
+	event = Event.create!(start_date: Faker::Date.forward(2), duration: rand(1..200)*5, title: Faker::Book.title,
 		description: Faker::Lorem.sentences(5), price: rand(1..1000), location: Faker::WorldCup.city, user_id: User.all.sample.id)
 end
 puts "30 events created"
