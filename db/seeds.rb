@@ -18,7 +18,7 @@ end
 puts "30 events created"
 
 40.times do
-	rdv = Attendance.create!(stripe_costumer_id: Faker::String.random, user_id: User.all.sample.id, event_id: Event.all.sample.id)
+	rdv = Attendance.create!(user_id: User.all.sample.id, event_id: Event.all.sample.id)
 end
 puts "40 attendances created"
 puts "Database created"
