@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'attendance/index'
+  get 'attendance/show'
+  get 'attendance/new'
+  get 'attendance/update'
+  get 'attendance/destroy'
   get 'users/index'
   get 'users/show'
   get 'event/index'
@@ -11,6 +16,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :events
 end
+  resources :events do
+    resources :attendance
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

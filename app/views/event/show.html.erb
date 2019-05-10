@@ -4,3 +4,6 @@
 <p>Location: <%= @event.location %></p>
 <p>Duration: <%= @event.duration %> minutes</p>
 <p>Price: <%= @event.price %> USD</p></br>
+
+<button type="button" class="btn btn-primary">
+            <a href="<%= new_event_attendance_path(@event.id) %>">Read more</a>

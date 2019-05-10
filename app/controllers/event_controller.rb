@@ -14,9 +14,9 @@ class EventController < ApplicationController
 
   def create
     @event = Event.new(title: params[:title], description: params[:description], duration: params[:duration],
-    	start_date: params[:start_date], price: params[:price], user_id: current_user.id)
+    	start_date: params[:start_date], price: params[:price], user_id: current_user.id, location: params[:location])
 
-      if @event.valid?
+      if @event.save
       redirect_to root_path, success: 'The event was succesfully created !'
     else
       render 'new', danger: 'Error : you need to complete this field '
