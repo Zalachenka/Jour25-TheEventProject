@@ -1,0 +1,52 @@
+<html>
+  <body>
+    <!-- ... -->
+
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'Title'%>
+      <br /> <br />
+
+      <%= label_tag 'Description' %>
+      <%= text_area_tag 'Description' %>
+      <br /> <br />
+
+       <%= label_tag 'Start date' %>
+      <%= text_area_tag 'YYYY-MM-DD' %>
+      <br /> <br />
+
+       <%= label_tag 'Duration' %>
+      <%= text_area_tag 'Duration' %>
+      <br /> <br />
+
+       <%= label_tag 'Location' %>
+      <%= text_area_tag 'Location' %>
+      <br /> <br />
+
+       <%= label_tag 'Price' %>
+      <%= text_area_tag 'Price' %>
+      <br /> <br />
+      
+      <%= submit_tag "Create Event" %>
+
+    <% end %>
+
+     <!-- debut alerte boostrap -->
+    <% flash.each do |name, msg| %>
+    <div class="alert alert-<% name %>">
+      <% msg %>
+    </div>
+      <% end %>
+      <!-- fin alerte boostrap -->
+
+    <% if @event.errors.any? %>
+      <p>We were not able to create your event for the following reason(s) :</p>
+      <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </body>
+</html>

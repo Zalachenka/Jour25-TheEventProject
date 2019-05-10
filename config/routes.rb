@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   get 'static_page/index'
   get 'static_page/secret'
   devise_for :users
-  resources :event
-  resources :users
+  resources :event 
   resources :charges
+  resources :users do
+    resources :events
+end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
