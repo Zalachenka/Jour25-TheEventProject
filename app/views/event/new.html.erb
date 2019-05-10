@@ -5,29 +5,29 @@
     <%= form_tag url_for(action: 'create'), method: "post" do %>
 
       <%= label_tag 'Title' %>
-      <%= text_field_tag 'Title'%>
+      <%= text_field_tag 'title'%>
       <br /> <br />
 
       <%= label_tag 'Description' %>
-      <%= text_area_tag 'Description' %>
+      <%= text_area_tag 'description' %>
       <br /> <br />
 
        <%= label_tag 'Start date' %>
-      <%= text_area_tag 'YYYY-MM-DD' %>
+      <%= text_area_tag 'start_date' %>
       <br /> <br />
 
        <%= label_tag 'Duration' %>
-      <%= text_area_tag 'Duration' %>
+      <%= text_area_tag 'duration' %>
       <br /> <br />
 
        <%= label_tag 'Location' %>
-      <%= text_area_tag 'Location' %>
+      <%= text_area_tag 'location' %>
       <br /> <br />
 
        <%= label_tag 'Price' %>
-      <%= text_area_tag 'Price' %>
+      <%= text_area_tag 'price' %>
       <br /> <br />
-      
+
       <%= submit_tag "Create Event" %>
 
     <% end %>
