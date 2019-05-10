@@ -13,7 +13,7 @@ puts "20 users created"
 
 30.times do
 	event = Event.create!(start_date: Faker::Date.forward(2), duration: rand(1..200)*5, title: Faker::Book.title,
-		description: Faker::Lorem.sentences(5), price: rand(1..1000), location: Faker::WorldCup.city, user_id: User.all.sample.id)
+		description: Faker::Lorem.paragraph_by_chars(666), price: rand(1..1000), location: Faker::WorldCup.city, user_id: User.all.sample.id)
 end
 puts "30 events created"
 
