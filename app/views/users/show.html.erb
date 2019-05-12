@@ -2,8 +2,8 @@
       <b>Last name :</b><p><%= @user.last_name%></p>
       <b>Decription :</b><p><%= @user.description%></p>
       <b>Email :</b><p><%= @user.email %></p>
-     <b>Events you're origanizing :</b>
-     <p> <% @user.event.each do |event| %>
+      <b>Events you're origanizing :</b>
+      <p> <% @user.event.each do |event| %>
 
       <%= event.description %>"<br>
       <% end %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'static_page/index'
   get 'static_page/secret'
   devise_for :users
+  resources :users
   resources :event 
   resources :charges
   resources :users do
